@@ -1,12 +1,12 @@
-var axios = require("axios");
+import axios from "axios";
 
-var geocodeAPI = "35e5548c618555b1a43eb4759d26b260";
+var APIkey = "967bbeeec1d94109a8ea018027af616b";
 
 var helpers = {
   runQuery: (location) => {
     console.log(location);
-    // Figure out the geolocation
-    var queryURL = "http://api.opencagedata.com/geocode/v1/json?query=" + location + "&pretty=1&key=" + geocodeAPI;
+    // Figure out news
+    var queryURL = "https://newsapi.org/v2/everything?q=bitcoin&from=2019-04-03&sortBy=publishedAt&apiKey=" + APIkey;
     return axios.get(queryURL).then((response) => {
       console.log(response);
       return response.data.results[0].formatted;

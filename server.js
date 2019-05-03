@@ -2,7 +2,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongojs = require('mongojs');
 var Article = require("./models/article.js");
-
 var request = require("request");
 
 
@@ -31,7 +30,7 @@ db.once("open", function()
 
 require("./routes/api-routes.js")(app, db);
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function() 
 {
